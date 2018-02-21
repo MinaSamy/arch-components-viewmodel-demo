@@ -16,10 +16,6 @@ import android.widget.TextView
 
 class MainFragment : Fragment() {
 
-    /*private val viewModel: DemoViewModel by lazy {
-        ViewModelProviders.of(this).get(DemoViewModel::class.java)
-    }*/
-
     private lateinit var viewModel: DemoViewModel
 
     var buttonListener: OnSecondFragmentButtonClickListener? = null
@@ -50,7 +46,6 @@ class MainFragment : Fragment() {
 
         viewModel.numbersLiveData.observe(this, object : Observer<List<Int>> {
             override fun onChanged(numbers: List<Int>?) {
-                Log.e("AAA", numbers?.toString())
                 textViewNumbers.text = numbers?.toString()
             }
         })
@@ -63,7 +58,6 @@ class MainFragment : Fragment() {
         val secondFragmentButton = view.findViewById<Button>(R.id.button_show_second_fragment)
         secondFragmentButton.setOnClickListener({ buttonListener?.onSecondFragmentButtonClicked() })
     }
-
 
     interface OnSecondFragmentButtonClickListener {
         fun onSecondFragmentButtonClicked()

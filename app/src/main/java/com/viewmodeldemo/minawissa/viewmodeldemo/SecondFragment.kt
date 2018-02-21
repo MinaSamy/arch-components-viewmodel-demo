@@ -40,5 +40,4 @@ class SecondFragment : Fragment() {
         addButton.setOnClickListener { viewModel.addItem(100) }
     }
 
-
 }
