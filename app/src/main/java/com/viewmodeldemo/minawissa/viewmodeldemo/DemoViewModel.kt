@@ -19,7 +19,7 @@ class DemoViewModel : ViewModel() {
         }
 
     private fun loadInitialData() {
-        Log.e("AAA","Loading initial data")
+        Log.i("DemoViewModel", "Loading initial data")
         numbers.apply {
             add(1)
             add(2)
